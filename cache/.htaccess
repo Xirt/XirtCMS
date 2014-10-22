@@ -1,0 +1,6 @@
+# Writer      : A.G. Gideonse
+# Date        : 23/10/2014
+
+# Prevents log file access through browsers
+Order allow,deny
+Deny from all
