@@ -1,0 +1,19 @@
+.cell-rank,
+.cell-rank p {
+	width: 55px;
+	text-align: center;
+}
+
+.cell-options {
+	width: 56px;
+	text-align: center;
+}
+
+
+/*
+ * Lay-overs
+ */
+#item_rank, #nitem_rank {
+	width: 50px;
+	text-align: center;
+}

@@ -1,0 +1,21 @@
+.cell-id,
+.cell-id p {
+	width: 55px;
+	text-align: center;
+}
+
+.cell-query {
+	width: 250px;
+	overflow: hidden;
+}
+
+.cell-cid,
+.cell-cid p {
+	width: 75px;
+	text-align: center;	
+}
+
+.cell-options {
+	width: 56px;
+	text-align: center;
+}

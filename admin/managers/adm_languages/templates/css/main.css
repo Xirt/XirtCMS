@@ -1,0 +1,20 @@
+.cell-flag {
+	width: 35px;
+	text-align: center;
+}
+
+.cell-iso,
+.cell-iso p {
+	width: 50px;
+	text-align: center;
+}
+
+.cell-ordering {
+	width: 100px;
+	text-align: center;
+}
+
+.cell-published {
+	width: 50px;
+	text-align: center;
+}

@@ -1,0 +1,15 @@
+.cell-id,
+.cell-id p {
+	width: 55px;
+	text-align: center;
+}
+
+.cell-name {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.cell-options {
+	width: 28px;
+	text-align: center;
+}

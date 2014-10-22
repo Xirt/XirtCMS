@@ -1,0 +1,66 @@
+.cell-id,
+.cell-id p {
+	width: 55px;
+	text-align: center;
+}
+
+.cell-rank,
+.cell-rank p {
+	width: 40px;
+	text-align: center;
+}
+
+.cell-username {
+	width: 150px;
+}
+
+.cell-name {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.cell-mail {
+	width: 250px;
+}
+
+.cell-dt_login,
+.cell-dt_login p,
+.cell-dt_joined,
+.cell-dt_joined p {
+	width: 150px;
+	text-align: center;
+}
+
+th.cell-options {
+	width: 100px;
+	text-align: center;
+}
+
+td.cell-options {
+	width: 84px;
+	text-align: center;
+}
+
+
+/*
+ * Responsive design
+ */
+@media (max-width: 1280px) {
+
+	.cell-mail {
+		 display: none !important;
+	}
+
+}
+
+@media (max-width: 1024px) {
+
+	.cell-dt_joined {
+		 display: none !important;
+	}
+
+	.cell-name {
+		 display: none !important;
+	}
+
+}

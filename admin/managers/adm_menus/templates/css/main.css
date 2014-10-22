@@ -1,0 +1,25 @@
+.cell-xid,
+.cell-xid p {
+	width: 55px;
+	text-align: center;
+}
+
+.cell-title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.cell-ordering {
+	width: 100px;
+	text-align: center;
+}
+
+.cell-sitemap {
+	width: 75px;
+	text-align: center;
+}
+
+.cell-options {
+	width: 84px;
+	text-align: center;
+}

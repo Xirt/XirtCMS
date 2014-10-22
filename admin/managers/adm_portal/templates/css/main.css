@@ -1,0 +1,48 @@
+.cell-id,
+.cell-id p {
+	width: 55px;
+	text-align: center;
+}
+
+.cell-error_no,
+.cell-error_no p {
+	width: 40px;
+	text-align: center;
+}
+
+.cell-error_msg p {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.cell-time,
+.cell-time p {
+	width: 150px;
+	text-align: center;
+}
+
+.cell-options {
+	width: 56px;
+	text-align: center;
+}
+
+
+/*
+ * Entry types
+ */
+.ui-widget .xForm input {
+	width: 250px;
+}
+ 
+.type-512 {
+	background: url(../../../../../images/cms/icons/warning.png) no-repeat center center;
+}
+
+.type-1024 {
+	background: url(../../../../../images/cms/icons/notice.png) no-repeat center center;
+}
+
+.ui-dialog.log .ui-dialog-content {
+	font-family: Courier New;
+	font-size: 11px;
+}
