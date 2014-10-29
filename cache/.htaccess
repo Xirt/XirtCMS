@@ -1,6 +1,8 @@
 # Writer      : A.G. Gideonse
 # Date        : 23/10/2014
 
-# Prevents cache access through browsers
-Order allow,deny
-Deny from all
+# Prevents access to cached PHP-files
+<FilesMatch "\.(php)$">
+	Order allow,deny
+	Deny from all
+</FilesMatch>
