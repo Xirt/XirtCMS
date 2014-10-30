@@ -1,0 +1,35 @@
+.cell-id,
+.cell-id p {
+	width: 35px;
+	text-align: center;
+}
+
+.cell-term {
+	width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.cell-uri {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.cell-impressions,
+.cell-impressions p {
+	width: 75px;
+	text-align: center;
+}
+
+.cell-options {
+	width: 56px;
+	text-align: center;
+}
+
+
+/*
+ * Lay-overs
+ */
+#dvRecording {
+	height: 31px;
+}
