@@ -352,9 +352,12 @@ $.widget("ui.panel", $.extend(true, {}, $.ui.dialog.prototype, {
 
 		try {
 
-			var form = $(this.uiDialog.find("form"));
 			if (typeof json == "object") {
+				
+				var form = $(this.uiDialog.find("form"));
 				Xirt.populateForm(form, json);
+				this.options.onPopulate(form, json);
+
 			}
 
 		} catch (e) {
@@ -363,7 +366,6 @@ $.widget("ui.panel", $.extend(true, {}, $.ui.dialog.prototype, {
 
 		} finally {
 
-			this.options.onPopulate(form, json);
 			if (this.options.autoOpen) {
 				this.open();
 			}
