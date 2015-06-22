@@ -8,4 +8,8 @@
 	{sitemap_node node=$child}
 {/foreach}
 </ul>
-{/if} {/function} {sitemap_node node=$node}
+{/if}
+
+{/function}
+
+{sitemap_node node=$node}

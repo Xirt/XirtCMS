@@ -6,7 +6,7 @@
 	<url>
 		<loc>{XConfig::get("SESSION_URL_BASE")}{$node->link}</loc>
 		<priority>{math equation="1.1 - x / 10" x=$node->level}</priority>
-   </url>
+	</url>
 
 	{/if}
 	{/foreach}
