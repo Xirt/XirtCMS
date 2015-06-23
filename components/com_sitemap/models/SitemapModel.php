@@ -50,10 +50,10 @@ class SitemapModel extends XModel {
 
          // Update links
          $child->link = XTools::createLink(
-         $child->link,
-         $child->xid,
-         $child->name
-         );
+            $child->link,
+            $child->xid,
+            $child->name
+         )->alternative;
 
          self::_link($child);
 

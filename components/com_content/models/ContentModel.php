@@ -73,7 +73,6 @@ class ContentModel extends XModel {
       // Variables parsing
       $this->translation = ($data->language != XConfig::get("SESSION_LANGUAGE"));
       $this->config      = $this->_parseConfiguration($this->config);
-      $this->content     = $this->_parseContent($this->content);
 
       // Creation date
       if ($this->config->show_created) {
@@ -114,17 +113,6 @@ class ContentModel extends XModel {
       }
 
       return $list;
-   }
-
-
-   /**
-    * Parses the given content
-    *
-    * @param $content The content to parse
-    * @return String the parsed content
-    */
-   private function _parseContent($content) {
-      return XSEF::parse($content);
    }
 
 }
