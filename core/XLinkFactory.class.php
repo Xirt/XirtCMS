@@ -51,7 +51,7 @@ abstract class XLinkFactory {
 
       } else {
 
-         // Uknown link (SEF variant)
+         // Unknown link (SEF variant)
          $link = new XLink($str, null);
          $link->create($name, $cId, $iso);
          self::$_list->add($link);

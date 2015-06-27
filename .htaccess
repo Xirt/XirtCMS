@@ -1,0 +1,65 @@
+# Writer      : A.G. Gideonse
+# Date        : 27/06/2015
+
+RewriteEngine On
+
+# The RewriteBase directive explicitly sets the base URL for per-directory
+# rewrites. Uncomment and set this command if you are having trouble with
+# the RewriteEngine (internal errors on SEF links or JavaScript files).
+#RewriteBase /
+
+
+### JAVASCRIPT COMPRESSION ###
+# Combine is used for JavaScript compression when DEBUG_MODE is FALSE. This line
+# should remain uncomment unless you are always in DEBUG_MODE (for example on
+# development platforms) and never want COMBINE_SCRIPT to trigger (even if set 
+# to TRUE).
+RewriteRule ^xjs/(.*\.js) combine.php?files=$1
+
+
+### SEF LINKS ###
+# The following rules are required for the correct working of Search Engine 
+# Friendly (SEF) links. It is recommended that these lines remain uncommented
+# unless you do not use the RewriteEngine / SEF links.
+RewriteCond %{REQUEST_URI} !^/(admin/.*)$
+RewriteCond %{REQUEST_URI} (/|\.htm|\.php|\.html|/[^.]*)$  [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) index.php
+
+
+### ERROR DOCUMENTS ###
+# Triggers the usage of the standard XirtCMS error pages.
+ErrorDocument 401 /index.php?content=com_helper&task=show_error_401
+ErrorDocument 403 /index.php?content=com_helper&task=show_error_403
+ErrorDocument 404 /index.php?content=com_helper&task=show_error_404
+
+
+### FAVICON HOTFIX ###
+# The following line rewrites the location for the favicon, as old IE do not 
+# interpret the HTML-tag correctly. This line should remain uncommented for 
+# backwards compatiblity.
+RewriteRule ^favicon.ico$ images/favicon.ico [L]
+
+
+### WEBSITE SPEED - CACHING ###
+# The following section enables caching of infrequently modified files like 
+# images, style sheets and JavaScript files. It can be sometimes convenient to 
+# comment this section during development when files are frequently modified.
+<IfModule mod_expires.c>
+   ExpiresActive On
+   AddType image/vnd.microsoft.icon .ico
+   ExpiresByType image/vnd.microsoft.icon "access plus 1 years"
+   ExpiresByType text/html "access plus 1 seconds"
+   ExpiresByType image/gif "access plus 1 years"
+   ExpiresByType image/jpeg "access plus 1 years"
+   ExpiresByType image/png "access plus 1 years"
+   ExpiresByType text/css "access plus 1 months"
+   ExpiresByType text/javascript "access plus 1 years"
+   ExpiresByType application/x-javascript "access plus 1 months"
+</IfModule>
+
+
+### WEBSITE SPEED - Etags ###
+# Removed Etags for improved loading speed.
+FileETag None

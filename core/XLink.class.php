@@ -113,39 +113,6 @@ class XLink {
 
 
    /**
-    * Parses original link and returns formatted query
-    *
-    * @access private
-    * @param $original The original link
-    * @param $cId The cId of the original link (optional)
-    * @return The formatted query (without iso/cid and alphabetically sorted)
-    */
-   private static function _originalToQuery($original, $cId) {
-
-      if (!($uri = parse_url($original)) || !array_key_exists("query", $uri)) {
-         return false;
-      }
-
-      parse_str($uri["query"], $args);
-
-      // Strip / retrieve cId
-      if (isset($args["cid"])) {
-
-         $cId = $cId ? $cId : intval($args["cid"]);
-         unset($args["cid"]);
-
-      }
-
-      // Strip language
-      if (isset($args["lang"])) {
-         unset($args["lang"]);
-      }
-
-      ksort($args);
-      return http_build_query($args);
-   }
-
-   /**
     * Saves the links to the database
     */
    public function save() {
@@ -159,35 +126,12 @@ class XLink {
 
 
    /**
-    * Load SEF alternative from database
+    * Returns the link for this XLink
     *
-    * @param $qry The query of the link to load
-    * @return boolean True on success, false on failure
+    * @return String The link for the current session
     */
-   public function load($qry) {
-      global $xDb;
-
-      // Database query
-      $query = "SELECT *                 " .
-               "FROM #__links            " .
-               "WHERE alternative = :link";
-
-      // Retrieve data
-      $stmt = $xDb->prepare($query);
-      $stmt->bindParam(":link", $qry, PDO::PARAM_STR);
-      $stmt->execute();
-
-      // Populate instance
-      if ($dbRow = $stmt->fetchObject()) {
-
-         foreach ($dbRow as $attrib => $value) {
-            $this->$attrib = $value;
-         }
-
-         return false;
-      }
-
-      return true;
+   public function toString() {
+      return XConfig::get("SEO_LINKS") ?  $this->alternative : $this->query;
    }
 
 }

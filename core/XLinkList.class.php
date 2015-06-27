@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Database Class for storing XLinks
+ * List containing all known XLinks
  *
  * @author     A.G. Gideonse
  * @version    2.0
@@ -31,7 +31,7 @@ class XLinkList {
     */
    public function __construct($forceRefresh = false) {
 
-      if ((!self::$_initialized || $forceRefresh) && XConfig::get("SEO_LINKS")) {
+      if ((!self::$_initialized || $forceRefresh)) {
          $this->_init();
       }
 
