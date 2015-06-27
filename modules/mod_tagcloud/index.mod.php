@@ -20,7 +20,7 @@ class mod_tagcloud extends XModule {
 
       foreach ($terms as $key => $term) {
 
-         $terms[$key]->uri = XTools::createLink($term->uri);
+         $terms[$key]->link = XLinkFactory::create($term->uri, 0, null, $term->term);
          $terms[$key]->term = XTools::encodeHTML($term->term);
 
       }

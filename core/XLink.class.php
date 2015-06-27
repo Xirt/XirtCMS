@@ -91,22 +91,27 @@ class XLink {
       $name = strtr($name, self::$conversions);
       $name = preg_replace("/[^\w-]/si", "", $name);
 
-      // Create alternative link
+      // Determine language
+      $iso = $iso ? $iso : $this->iso;
+      $iso = $iso ? $iso : XConfig::get("SESSION_LANGUAGE");
+
+      // Create alternative
       for ($i = 0; !$i || (new XLinkList())->returnLinkByAlternative($link); $i++) {
 
          // Numbering for duplicate terms
          $link = $i ? sprintf("%s-%d", $name, $i) : $name;
 
          // If not primary language, add language to link
-         if (current((new LanguageList())->toArray())->iso != XConfig::get("SESSION_LANGUAGE")) {
-            $link = sprintf("%s/%s", XConfig::get("SESSION_LANGUAGE"), $link);
+         $languages = (new LanguageList())->toArray();
+         if (array_shift($languages)->iso != $iso) {
+            $link = sprintf("%s/%s", $iso, $link);
          }
 
       }
 
       // Store values
       $this->cid         = $pageId;
-      $this->iso         = $iso ? $iso : $this->iso;
+      $this->iso         = $iso;
       $this->alternative = $link;
 
    }

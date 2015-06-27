@@ -44,10 +44,9 @@ class XMakeCompatible {
          $uri = substr($uri, strlen(XConfig::get("SESSION_URL_BASE")));
       }
 
-      $link = XLinkFactory::create($uri);
-
-      // Parse URL if necessary
-      if ($link->query && $link->iso) {
+      // Parse URL (if known)
+      $link = XLinkFactory::retrieve($uri);
+      if ($link != null && $link->query && $link->iso) {
 
          parse_str(parse_url($link->query, PHP_URL_QUERY), $args);
          XConfig::setLanguage($link->iso);

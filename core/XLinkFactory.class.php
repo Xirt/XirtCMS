@@ -18,14 +18,14 @@ abstract class XLinkFactory {
 
 
    /**
-    * Returns a link according to SEF settings
+    * Returns a link from known links
     *
     * @param $str The String to parse a URL
     * @param $pageId The unique (menuitem) ID of the page
-    * @param $name The name for SEF variant for the link
-    * @return XLink with details on the requested link
+    * @param $iso The ISO standard code for the link
+    * @return XLink with details on the requested link or null if not founds
     */
-   public static function create($str, $cId = 0, $name = "index") {
+   public static function retrieve($str, $cId = 0, $iso = null) {
 
       if (self::$_list == null) {
          self::$_list = new XLinkList();
@@ -37,8 +37,29 @@ abstract class XLinkFactory {
       }
 
       // Known link (identified as original)
-      $iso = XConfig::get("SESSION_LANGUAGE");
+      $iso = $iso ? $iso : XConfig::get("SESSION_LANGUAGE");
       if ($link = self::$_list->returnLinkByQuery($str, $iso)) {
+         return $link;
+      }
+
+      return null;
+
+   }
+
+
+   /**
+    * Returns a link according to SEF settings
+    *
+    * @param $str The String to parse a URL
+    * @param $pageId The unique (menuitem) ID of the page
+    * @param $iso The ISO standard code for the link
+    * @param $name The name for SEF variant for the link
+    * @return XLink with details on the requested link
+    */
+   public static function create($str, $cId = 0, $iso = null, $name = "index") {
+
+      // Known link
+      if ($link = self::retrieve($str, $cId, $iso, $name)) {
          return $link;
       }
 
@@ -50,6 +71,8 @@ abstract class XLinkFactory {
          self::$_list->add($link);
 
       } else {
+
+         echo $name;
 
          // Unknown link (SEF variant)
          $link = new XLink($str, null);

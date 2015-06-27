@@ -16,7 +16,7 @@ class SitemapModel extends XModel {
    public function load() {
 
       $this->list = array();
-      foreach ((new MenuList())->toArray() as $menu) {
+      foreach ((new XMenuList())->toArray() as $menu) {
 
          if ($menu->sitemap) {
 
@@ -47,13 +47,6 @@ class SitemapModel extends XModel {
             continue;
 
          }
-
-         // Update links
-         $child->link = XTools::createLink(
-            $child->link,
-            $child->xid,
-            $child->name
-         )->alternative;
 
          self::_link($child);
 
