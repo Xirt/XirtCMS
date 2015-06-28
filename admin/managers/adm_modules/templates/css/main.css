@@ -1,0 +1,43 @@
+.cell-xid,
+.cell-xid p {
+	width: 55px;
+	text-align: center;
+}
+
+.cell-title {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.cell-type,
+.cell-type p {
+	width: 150px;
+	text-align: center;
+}
+
+.cell-published {
+	width: 65px;
+	text-align: center;
+}
+
+.cell-position,
+.cell-position p {
+	width: 100px;
+	text-align: center;
+}
+
+.cell-options {
+	width: 112px;
+	text-align: center;
+}
+
+/*
+ * Lay-overs
+ */
+.xForm .ui-selectable {
+	width: 300px;
+}
+
+#dvConfig .box-affect {
+	text-align: center;
+}
