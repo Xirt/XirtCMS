@@ -12,13 +12,15 @@ class XInclude {
 
 
    /**
-    * @var The default location of plugins (JS)
+    * The default location of plugins (JS)
+    * @var String
     */
    const PATH_PLUGINS = "js/plugins/%s/plugin.js";
 
 
    /**
-    * @var The default location of modules
+    * The default location of modules
+    * @var String
     */
    const PATH_MODULES = "%s/modules/%s/index.mod.php";
 
