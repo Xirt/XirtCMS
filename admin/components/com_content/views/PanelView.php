@@ -17,8 +17,8 @@ class PanelView extends XComponentView {
     */
    function __construct($model) {
 
-      XPageInfo::addScript("components/com_search/templates/js/manager.js");
-      XPageInfo::addStylesheet("components/com_search/templates/css/main.css");
+      XPageInfo::addScript("components/com_content/templates/js/main.js");
+      XPageInfo::addStylesheet("components/com_content/templates/css/main.css");
 
       parent::__construct($model);
 
@@ -31,7 +31,7 @@ class PanelView extends XComponentView {
    protected function _init() {
 
       parent::_init();
-      $this->_template->assign("languages", $this->_model->languages);
+      $this->_template->assign("options", $this->_model->options);
       $this->_template->assign("configuration", $this->_model->configuration);
 
    }

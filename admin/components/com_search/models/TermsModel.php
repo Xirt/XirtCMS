@@ -5,7 +5,7 @@
  *
  * @author     A.G. Gideonse
  * @version    2.0
- * @copyright  XirtCMS 2010 - 2014
+ * @copyright  XirtCMS 2010 - 2015
  * @package    XirtCMS
  */
 class TermsModel extends XContentList {
@@ -73,10 +73,10 @@ class TermsModel extends XContentList {
       $iso = array_key_exists($iso, $languages) ? $iso : XConfig::get("SESSION_LANGUAGE");
 
       // Database query
-      $query = "SELECT *                                                    " .
-               "FROM %s                                                     " .
-               "WHERE language = :iso HAVING %s                             " .
-               "ORDER BY %s %s                                              ";
+      $query = "SELECT *                        " .
+               "FROM %s                         " .
+               "WHERE language = :iso HAVING %s " .
+               "ORDER BY %s %s                  ";
       $query = sprintf($query, $this->_table, implode(" OR ", $searchFilter), $this->_column, $this->_order);
 
       // Retrieve data

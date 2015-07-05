@@ -5,7 +5,7 @@
  *
  * @author     A.G. Gideonse
  * @version    2.0
- * @copyright  XirtCMS 2010 - 2014
+ * @copyright  XirtCMS 2010 - 2015
  * @package    XirtCMS
  */
 class ComponentModel extends XItemModel {
@@ -28,9 +28,9 @@ class ComponentModel extends XItemModel {
       global $xDb;
 
       // Database query
-      $query = "SELECT *                                                    " .
-               "FROM %s                                                     " .
-               "WHERE type = :type                                          ";
+      $query = "SELECT *          " .
+               "FROM %s           " .
+               "WHERE type = :type";
       $query = sprintf($query, $table);
 
       // Retrieve data

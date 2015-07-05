@@ -1,0 +1,99 @@
+.xForm {
+	width: 780px;
+	margin: auto;
+	padding: 10px;
+	background: #f9f9f9;
+	border: 1px #c0c0c0 dotted;
+	-moz-border-radius: 5px;
+}
+
+.xForm input,
+.xForm select {
+	width: 100px;
+}
+
+.xForm select {
+	width: auto;
+	max-width: 125px;
+}
+
+h1 {
+	margin: 5px 10px 0 10px;
+}
+
+div.column {
+	display: inline-block;
+	margin: 0 20px 5px 35px;
+	width: 365px;
+}
+
+div.column.preview {
+	width: 310px;
+	margin: 0 25px 5px 10px;
+}
+
+div.column fieldset {
+	width: 365px;
+	margin: 15px 0 5px 0;
+}
+
+fieldset.box-form.preview {
+	float: none;
+	width: 100px;
+}
+
+.box-preview {
+	width: 255px;
+	height: 350px;
+	padding: 10px;
+	margin: 10px;
+	border: 1px #000000 solid;
+	background: #ffffff;
+	font-size: 9px;
+	line-height: 9px;
+	text-align: justify;
+}
+
+.box-preview h5 {
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0px 0px 7px 0px;
+}
+
+.box-preview div {
+	margin: 5px 0px;
+	font-size: 8px;
+}
+
+.box-preview .box-icons {
+	text-align: center;
+}
+
+.box-preview .box-icons .icon {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin: 0px 3px;
+	background: #DBE5F1;
+	border: 1px #000000 solid;
+}
+
+.dvButtons {
+   height: 31px;
+}
+
+.icon#back_icon {
+	background: #DBE5F1 url(../images/icon_back.png) no-repeat center center;
+}
+
+.icon#mail_icon {
+	background: #DBE5F1 url(../images/icon_mail.png) no-repeat center center;
+}
+
+.icon#download_icon {
+	background: #DBE5F1 url(../images/icon_download.png) no-repeat center center;
+}
+
+.icon#print_icon {
+	background: #DBE5F1 url(../images/icon_print.png) no-repeat center center;
+}
